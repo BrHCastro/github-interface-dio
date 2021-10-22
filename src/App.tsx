@@ -1,8 +1,17 @@
+import { Layout } from './components/Layout'
+import { Profile } from './components/Profile'
+import { ResetCss } from './global/resetCSS'
+import { Repos } from './components/Repos'
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Dio!</h1>
-    </div>
+    <main>
+      <ResetCss/>
+      <Layout>
+        <Profile />
+        <Repos/>
+      </Layout>
+    </main>
   );
 }
 
