@@ -6,6 +6,7 @@ type GitHubUser = {
     loading: boolean,
     hasGitHubUser: boolean,
     user: {
+        id: number
         login: string
         name: string
         html_url: string
@@ -26,7 +27,6 @@ type GitHubUser = {
 //Tipando as Props do contexto
 type PropsGitHubUserContext = {
     gitHubState: GitHubUser
-    setGitHubState: React.Dispatch<React.SetStateAction<GitHubUser>>
 }
 
 //Valor default do contexto
@@ -35,6 +35,7 @@ const DEFAULT_VALUES = {
         loading: false,
         hasGitHubUser: false,
         user: {
+            id: 0,
             login: "Mariazinha",
             name: "Maria Joaquina",
             html_url: "https://github.com/BrHCastro",
@@ -49,9 +50,7 @@ const DEFAULT_VALUES = {
         },
         repositories: [""],
         starred: [""]
-    },
-    setGitHubState: () => { },
-    getGitHubUser: () => { }
+    }
 }
 
 //Criando o contexto
@@ -61,7 +60,6 @@ const GitHubUserContextProvider: React.FC = ({ children }) => {
     const [gitHubState, setGitHubState] = useState(DEFAULT_VALUES.gitHubState)
 
     const getGitHubUser = (gitHubUserName: string) => {
-
 
         setGitHubState(prevState => ({
             ...prevState, loading: !prevState.loading
@@ -74,6 +72,7 @@ const GitHubUserContextProvider: React.FC = ({ children }) => {
                     ...prevState,
                     hasGitHubUser: true,
                     user: {
+                        id: data.id,
                         login: data.login,
                         name: data.name,
                         html_url: data.html_url,
@@ -94,10 +93,31 @@ const GitHubUserContextProvider: React.FC = ({ children }) => {
             })
     }
 
+    const getGitHubRepos = (gitHubUserName: string) => {
+        githubApi.get(`users/${gitHubUserName}/repos`)
+            .then(({ data }: any) => {
+                setGitHubState(prevState => ({
+                    ...prevState,
+                    repositories: data
+                }))
+            })
+    }
+
+    const getGitHubStarred = (gitHubUserName: string) => {
+        githubApi.get(`users/${gitHubUserName}/starred`)
+            .then(({ data }: any) => {
+                setGitHubState(prevState => ({
+                    ...prevState,
+                    starred: data
+                }))
+            })
+    }
+
     const contextValues = {
         gitHubState,
         getGitHubUser: useCallback((gitHubUserName) => getGitHubUser(gitHubUserName), []),
-        setGitHubState
+        getGitHubRepos: useCallback((gitHubUserName) => getGitHubRepos(gitHubUserName), []),
+        getGitHubStarred: useCallback((gitHubUserName) => getGitHubStarred(gitHubUserName), []),
     }
     return (
         <GitHubUserContext.Provider
