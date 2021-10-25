@@ -2,6 +2,8 @@ import { Layout } from './components/Layout'
 import { Profile } from './components/Profile'
 import { Repos } from './components/Repos'
 import { useGitHub } from './hooks/GitHubHooks'
+import { NoSearch } from './components/NoSearch'
+import { Loading } from './components/Loading'
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
         {gitHubState.hasGitHubUser ? (
           <>
             {gitHubState.loading ? (
-              <p>Loading</p>
+              <Loading />
             ) : (
               <>
                 <Profile />
@@ -23,7 +25,7 @@ function App() {
             )}
           </>
         ) : (
-          <p>Olá</p>
+          <NoSearch />
         )}
       </>
     </Layout>
