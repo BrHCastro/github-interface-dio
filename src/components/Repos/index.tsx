@@ -1,3 +1,4 @@
+import { RepositoryItems } from '../RepoItems'
 import * as S from './styled'
 
 export function Repos() {
@@ -20,8 +21,20 @@ export function Repos() {
                     Starred
                 </S.WrapperTab>
             </S.WrapperTabList>
-            <S.WrapperTabPanel>Panel Repositories</S.WrapperTabPanel>
-            <S.WrapperTabPanel>Panel Starred</S.WrapperTabPanel>
+            <S.WrapperTabPanel>
+                <RepositoryItems 
+                    nameRepo="github-interface-dio"
+                    fullNameRepo="BrHCastro/github-interface-dio"
+                    linkToRepo="https://github.com/BrHCastro/github-interface-dio"
+                />
+            </S.WrapperTabPanel>
+            <S.WrapperTabPanel>
+            <RepositoryItems 
+                    nameRepo="github-interface-dio"
+                    fullNameRepo="BrHCastro/github-interface-dio"
+                    linkToRepo="https://github.com/BrHCastro/github-interface-dio"
+                />
+            </S.WrapperTabPanel>
         </S.WrapperTabs>
     )
 }

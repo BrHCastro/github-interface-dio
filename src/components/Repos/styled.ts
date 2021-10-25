@@ -16,7 +16,7 @@ export const WrapperTabList: any = styled(TabList)`
 `
 WrapperTabList.tabsRole = 'TabList'
 
-export const WrapperTab = styled(Tab)`
+export const WrapperTab: any = styled(Tab)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +29,7 @@ export const WrapperTab = styled(Tab)`
 
     font-family: 'lato', sans-serif;
     font-weight: bold;
+    background: #FFF;
     color: #57606a;
     
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -59,9 +60,9 @@ export const WrapperTab = styled(Tab)`
         }
     }   
 `
-WrapperTabList.tabsRole = 'Tab'
+// WrapperTabList.tabsRole = 'Tab'
 
-export const WrapperTabPanel = styled(TabPanel)`
+export const WrapperTabPanel: any = styled(TabPanel)`
     display: none;
     height: 40vh;
     padding: 8px;
@@ -69,10 +70,10 @@ export const WrapperTabPanel = styled(TabPanel)`
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    background: #FFF;
 
     &.is-selected {
         display: block;
     }
 `
-
-WrapperTabList.tabsRole = 'TabPanel'
+// WrapperTabList.tabsRole = 'TabPanel'

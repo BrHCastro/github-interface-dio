@@ -19,6 +19,8 @@ export const WrapperInfoUser = styled.div`
     font-family: 'Lato', sans-serif;
     gap: 70px;
     margin: 25px 0 16px 0;
+    padding-right: 12px;
+    border-right: 1px solid #57606a;
 
     h1 {
         font-size: 24px;
@@ -36,9 +38,10 @@ export const WrapperInfoUser = styled.div`
 export const WrapperInfoUserSocial = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     width: 100%;
-    margin: 70px 50px;
+    margin: 50px;
+    color: #57606a;
     gap: 8px;
 
     font-family: 'lato', sans-serif;
@@ -46,6 +49,13 @@ export const WrapperInfoUserSocial = styled.div`
     img {
         width: 16px;
         margin-right: 4px;
+    }
+
+    .bio {
+        font-size: 14px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #57606a;
+        margin-bottom: 8px;
     }
 `
 

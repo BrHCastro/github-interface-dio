@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Header } from '../Header'
 import * as S from './styled'
 
 type Children = { 
@@ -8,9 +9,7 @@ type Children = {
 export function Layout({ children } : Children) {
     return (
         <S.WrapperLayout>
-            <header>
-                header
-            </header>
+            <Header />
             { children }
         </S.WrapperLayout>
     )
