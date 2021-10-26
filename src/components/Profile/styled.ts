@@ -80,8 +80,8 @@ export const WrapperInfoUserSocial = styled.div`
         margin-bottom: 8px;
         
         @media(max-width: 722px) {
-            margin: 0;
-            padding: 0;
+            margin: 16px 0 0;
+            padding: 0 0 8px;
         }
     }
 
