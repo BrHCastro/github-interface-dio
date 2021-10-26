@@ -9,7 +9,16 @@ export const Wrapper = styled.div`
     margin: 0 auto;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
-    background: #FFF;;
+    background: #FFF;
+
+    @media(max-width: 722px) {
+
+        flex-direction: column;
+        img {
+            width: 100%;
+            margin: 0;
+        }
+    }
 `
 
 export const WrapperInfoUser = styled.div`
@@ -19,7 +28,7 @@ export const WrapperInfoUser = styled.div`
     font-family: 'Lato', sans-serif;
     gap: 70px;
     margin: 25px 0 16px 0;
-    padding-right: 12px;
+    padding: 0 12px;
     border-right: 1px solid #57606a;
 
     h1 {
@@ -34,7 +43,20 @@ export const WrapperInfoUser = styled.div`
         font-weight: normal;
         font-size: 18px;
     }
+
+    @media(max-width: 768px) {
+        width: 100%;
+    }
+
+    @media(max-width: 722px) {
+        margin: 0;
+        padding: 0;
+        border: none;
+        gap: 35px;
+        padding: 25px 25px 0;
+    }
 `
+
 export const WrapperInfoUserSocial = styled.div`
     display: flex;
     flex-direction: column;
@@ -56,7 +78,23 @@ export const WrapperInfoUserSocial = styled.div`
         padding-bottom: 6px;
         border-bottom: 1px solid #57606a;
         margin-bottom: 8px;
+        
+        @media(max-width: 722px) {
+            margin: 0;
+            padding: 0;
+        }
     }
+
+    @media(max-width: 768px) {
+        margin: 50px 20px;
+    }
+
+    @media(max-width: 722px) {
+        margin: 0;
+        padding: 0;
+        padding: 0 25px 25px;
+    }
+
 `
 
 export const WrapperStatusCount = styled.div`
@@ -82,6 +120,11 @@ export const WrapperStatusCount = styled.div`
 
     i {
         line-height: 10px;
+    }
+
+
+    @media(max-width: 768px) {
+        flex-wrap: wrap; 
     }
 `
 

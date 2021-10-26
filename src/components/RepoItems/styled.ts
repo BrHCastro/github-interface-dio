@@ -18,11 +18,14 @@ export const Wrapper = styled.div`
         flex-direction: column;
         flex-wrap: wrap;
         gap: 8px;
+        width: 100%;
+        word-wrap: anywhere;
 
         h2 {
             font-weight: bold;
-            font-size: 20px
+            font-size: 20px;
         }
+
     }
 
     .link {
@@ -33,5 +36,9 @@ export const Wrapper = styled.div`
             font-size: 16px;
             color: blue;
         }
+    }
+
+    @media(max-width: 722px) {
+        width: calc(100% - 16px);
     }
 `

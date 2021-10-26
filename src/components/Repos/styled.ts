@@ -83,4 +83,8 @@ export const WrapperList = styled.div`
     flex-wrap: wrap;
     gap: 16px;
     padding: 16px;
+
+    @media(max-width: 722px) {
+        justify-content: center;
+    }
 `

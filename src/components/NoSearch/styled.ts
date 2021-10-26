@@ -26,5 +26,6 @@ export const Wrapper = styled.div`
 
     span {
         color: #57606A;
+        text-align: center;
     }
 `
