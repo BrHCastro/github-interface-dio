@@ -5,6 +5,7 @@ import { useGitHub } from './hooks/GitHubHooks'
 import { NoSearch } from './components/NoSearch'
 import { Loading } from './components/Loading'
 
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <Layout>
       <>
-        {gitHubState.hasGitHubUser ? (
+        {gitHubState.hasGitHubUser && gitHubState.wasFound ? (
           <>
             {gitHubState.loading ? (
               <Loading />
@@ -27,6 +28,15 @@ function App() {
         ) : (
           <NoSearch />
         )}
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              fontFamily: 'Lato',
+            },
+          }}
+        />
       </>
     </Layout>
   )

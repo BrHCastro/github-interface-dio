@@ -1,10 +1,14 @@
 import React, { createContext, useCallback, useState } from 'react'
 import { githubApi } from '../services/api'
 
+import toast from 'react-hot-toast'
+const notify = (message: string) => toast.error(message);
+
 //Tipando os dados que quero para o usuário
 type GitHubUser = {
     loading: boolean,
     hasGitHubUser: boolean,
+    wasFound: boolean,
     user: {
         id: number
         login: string
@@ -34,6 +38,7 @@ const DEFAULT_VALUES = {
     gitHubState: {
         loading: false,
         hasGitHubUser: false,
+        wasFound: false,
         user: {
             id: 0,
             login: "Mariazinha",
@@ -71,6 +76,7 @@ const GitHubUserContextProvider: React.FC = ({ children }) => {
                 setGitHubState(prevState => ({
                     ...prevState,
                     hasGitHubUser: true,
+                    wasFound: true,
                     user: {
                         id: data.id,
                         login: data.login,
@@ -86,6 +92,16 @@ const GitHubUserContextProvider: React.FC = ({ children }) => {
                         public_repos: data.public_repos,
                     }
                 }))
+            }).catch(error => {
+
+                console.warn(error.message);
+                setGitHubState(prevState => ({
+                    ...prevState,
+                    wasFound: false
+                }))
+
+                notify('User not found!')
+
             }).finally(() => {
                 setGitHubState(prevState => ({
                     ...prevState, loading: !prevState.loading
