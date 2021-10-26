@@ -21,8 +21,8 @@ export function Profile() {
                 </div>
 
                 <S.WrapperStatusCount>
-                    <img src={userIcon} alt="users icon" />
                     <div className="user-info">
+                        <img src={userIcon} alt="users icon" />
                         <h4>Followers:</h4>
                         <span>{ gitHubState.user.followers }</span>
                         <i>.</i>

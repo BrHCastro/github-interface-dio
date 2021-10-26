@@ -17,7 +17,8 @@ export function Repos() {
 
         setHasUserForSearchRepos(!!gitHubState.repositories)
 
-    }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [ gitHubState.user.login ])
 
     return (
         <>

@@ -2,7 +2,7 @@ import App from './App'
 import { ResetCss } from './global/resetCSS'
 import { GitHubUserContextProvider } from './providers/GitHubProvider'
 
-export function Providers({ children }: any) {
+export function Providers() {
     return (
         <main>
             <GitHubUserContextProvider>

@@ -1,4 +1,5 @@
 import * as S from './styled'
+import eyeImage from '../../assets/images/eye-icon.svg'
 
 type ReposProps = {
     nameRepo: string
@@ -21,7 +22,7 @@ export function RepositoryItems({
                 <h4>{description}</h4>
             </div>
             <div className="link">
-                <a href={linkToRepo} target="_blank" rel="noreferrer">{fullNameRepo}</a>
+                <a href={linkToRepo} target="_blank" rel="noreferrer"><img src={ eyeImage } alt={ fullNameRepo } /></a>
             </div>
         </S.Wrapper>
     )
