@@ -1,16 +1,9 @@
 # GitHub Interface
 
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 40%; margin: 0 auto; text-align: center">
-    <div>
-        <img src="https://img.shields.io/github/license/brhcastro/github-interface-dio" alt="License" />
-        <img src="https://img.shields.io/github/package-json/v/BrHCastro/github-interface-dio" alt="Version"/>
-        <img src="https://img.shields.io/badge/TypeScript-%5E4.1.2-blue" alt="TypeScript" />
-    </div>
-    <br />
-    <div><span>Projeto criado durante o curso <strong>Criando um front-end totalmente componentizado na prática com ReactJS</strong> da <a href="https://digitalinnovation.one/">Digital Innovation One</a>.</span></div>
-</div>
+> Projeto criado durante o curso **Criando um front-end totalmente componentizado na prática com ReactJS** da [Digital Innovation One](https://digitalinnovation.one/).
+
 <br /><br />
-<div style="width: 250px; display: flex; gap: 16px; margin: 0 auto; justify-content: center; align-items: center;">
+<div style="width: 250px;">
     <img src="./src/assets/images/mobile (1).png" />
     <img src="./src/assets/images/mobile (2).png" />
 </div>
