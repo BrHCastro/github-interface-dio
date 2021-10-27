@@ -34,7 +34,10 @@ function App() {
           toastOptions={{
             style: {
               fontFamily: 'Lato',
-            },
+            }
+          }}
+          containerStyle={{
+            top: 70,
           }}
         />
       </>

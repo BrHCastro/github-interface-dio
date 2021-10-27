@@ -22,4 +22,8 @@ export const Wrapper = styled.div`
         font-size: 40px;
         font-weight: bold;
     }
+
+    @media(max-width: 500px) {
+        height: auto;
+    }
 `
